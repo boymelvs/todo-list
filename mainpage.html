@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>TODO LIST</title>
+
+          <link rel="stylesheet" href="./styles/css/styles.css" />
+     </head>
+     <body>
+          <div class="container">
+               <h1>TODO LIST</h1>
+
+               <div class="todo-task">
+                    <div class="task-container">
+                         <a href="./landingpage.html" class="close">[Close]</a>
+                         <h2>Please Enter a task</h2>
+
+                         <form id="form">
+                              <input type="date" name="task-date" id="task-date" min="" max="2050-12-31" required />
+
+                              <input type="text" name="task" id="task" placeholder="What task is in your mind?" value="" required />
+
+                              <input type="submit" name="save-btn" id="save-btn" value="Save" />
+                         </form>
+
+                         <div class="display list-display">
+                              <h3>Hi Melvin! Here's your To-Do List.</h3>
+                         </div>
+                    </div>
+               </div>
+
+               <div id="modal-container">
+                    <div class="modal">
+                         <div class="question">Remove the records?</div>
+                         <div class="confirmation-btn">
+                              <button class="confirm">Ok</button>
+                              <button class="cancel">Cancel</button>
+                         </div>
+                    </div>
+               </div>
+          </div>
+
+          <script src="./index.js"></script>
+     </body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+     <head>
+          <meta charset="UTF-8" />
+          <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+          <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+          <title>TODO LIST</title>
+
+          <link rel="stylesheet" href="./styles/css/styles.css" />
+     </head>
+     <body>
+          <div class="container">
+               <h1>TODO LIST</h1>
+
+               <div class="todo-task">
+                    <div class="task-container">
+                         <h2>Please Enter a task</h2>
+
+                         <form action="">
+                              <input type="date" name="task-date" id="task-date" min="{todayDate}" max="2050-12-31" value="" />
+
+                              <input type="text" name="task" id="task" placeholder="What task is in your mind?" />
+
+                              <input type="submit" name="task-btn" id="task-btn" value="Save" />
+                         </form>
+
+                         <div class="display list-display">
+                              <h3>Hi Melvin! Here's your To-Do List.</h3>
+
+                              <div class="task-list">
+                                   <div class="date">19/Aug/2022</div>
+                                   <div class="list">Learn About About About React</div>
+
+                                   <div class="btn-container">
+                                        <button title="complete" class="complete-btn">&#x2714;</button>
+
+                                        <button title="delete" class="delete-btn">&#10008;</button>
+                                   </div>
+                              </div>
+                         </div>
+                    </div>
+               </div>
+          </div>
+     </body>
+</html>

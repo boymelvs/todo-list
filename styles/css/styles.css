@@ -1,0 +1,160 @@
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  font-family: "Roboto", sans-serif;
+  min-height: 100vh;
+  background: hsl(0deg, 0%, 91%);
+  min-width: 320px;
+  max-width: 1440px;
+}
+.container h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.container .todo-task {
+  position: relative;
+}
+.container .task-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background: hsl(192deg, 86%, 53%);
+  border: 5px solid hsl(0deg, 0%, 100%);
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.5);
+}
+.container .task-container .close {
+  font-size: 14px;
+  text-decoration: none;
+  color: black;
+  position: absolute;
+  top: 2px;
+  right: 5px;
+  padding: 10px 10px 20px 10px;
+}
+.container .task-container .close:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}
+.container .task-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .container .task-container form {
+    flex-direction: row;
+  }
+}
+.container .task-container form input {
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+}
+.container .task-container form #task-date {
+  width: 65%;
+  cursor: text;
+}
+@media (max-width: 768px) {
+  .container .task-container form #task-date {
+    width: 50%;
+  }
+}
+.container .task-container form #task {
+  width: 100%;
+}
+.container .task-container #save-btn {
+  padding: 10px 15px;
+  color: hsl(0deg, 0%, 100%);
+  background: hsla(0deg, 0%, 0%, 0.5);
+}
+.container .task-container #save-btn:hover {
+  background: hsl(0deg, 0%, 0%);
+  cursor: pointer;
+}
+.container .task-container #save-btn:active {
+  background: hsla(0deg, 0%, 0%, 0.5);
+}
+.container .task-container .display {
+  background: hsl(0deg, 0%, 91%);
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 450px;
+  max-height: 300px;
+  overflow-y: scroll;
+}
+.container .task-container .display h3 {
+  text-align: left;
+  margin-bottom: 10px;
+}
+.container .task-container .display .task-list {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  padding: 10px;
+  background: hsl(0deg, 0%, 100%);
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+.container .task-container .display .task-list .date {
+  font-size: 11px;
+  width: 40%;
+}
+.container .task-container .display .task-list .list {
+  font-size: 15px;
+  text-align: left;
+  flex-wrap: wrap;
+  width: 100%;
+}
+.container .task-container .display .btn-container {
+  display: flex;
+  gap: 5px;
+}
+.container .task-container .display .btn-container button {
+  padding: 0 1px 1px 1px;
+  border: none;
+  border-radius: 3px;
+  background: hsla(0deg, 0%, 0%, 0.7);
+  color: hsl(0deg, 0%, 100%);
+  width: 20px;
+}
+.container .task-container .display .btn-container button:hover {
+  background: hsl(0deg, 0%, 0%);
+  cursor: pointer;
+}
+.container .task-container .display .btn-container button:active {
+  background: hsla(0deg, 0%, 0%, 0.7);
+}
+.container .task-container .display .btn-container .delete-btn {
+  background-color: hsl(0deg, 96%, 72%);
+}
+.container .task-container .display .btn-container .delete-btn:hover {
+  background-color: hsl(0deg, 100%, 50%);
+  cursor: pointer;
+}
+
+#modal-container {
+  display: none;
+}
+
+/*# sourceMappingURL=styles.css.map */
