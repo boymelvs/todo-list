@@ -10,11 +10,30 @@
      </head>
      <body>
           <div class="container">
+               <div id="modal-container" class="active show">
+                    <div class="modal">
+                         <h1 class="question">CREATE TODO LIST</h1>
+                         <form action="" id="register">
+                              <fieldset>
+                                   <legend>Your name is?</legend>
+                                   <label for="username">
+                                        <input type="text" name="name" id="name" placeholder="Juan Delacruz" />
+                                   </label>
+                              </fieldset>
+
+                              <div class="confirmation-btn">
+                                   <button type="submit" class="confirm modal-btn">Ok</button>
+                                   <button class="cancel modal-btn">Cancel</button>
+                              </div>
+                         </form>
+                    </div>
+               </div>
+
                <h1>TODO LIST</h1>
 
                <div class="todo-task">
                     <div class="task-container">
-                         <a href="./landingpage.html" class="close">[Close]</a>
+                         <a href="mainpage.html" class="close">[Close]</a>
                          <h2>Please Enter a task</h2>
 
                          <form id="form">
@@ -26,17 +45,7 @@
                          </form>
 
                          <div class="display list-display">
-                              <h3>Hi Melvin! Here's your To-Do List.</h3>
-                         </div>
-                    </div>
-               </div>
-
-               <div id="modal-container">
-                    <div class="modal">
-                         <div class="question">Remove the records?</div>
-                         <div class="confirmation-btn">
-                              <button class="confirm">Ok</button>
-                              <button class="cancel">Cancel</button>
+                              <h3>Hi <span class="userName">Melvin</span>! Here's your To-Do List.</h3>
                          </div>
                     </div>
                </div>

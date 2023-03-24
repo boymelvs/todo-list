@@ -1,6 +1,10 @@
 "use strict";
 
+const getModal = document.querySelector("#modal-container");
+const confirmBtn = document.querySelector(".confirm");
+const cancelBtn = document.querySelector(".cancel");
 const form = document.getElementById("form");
+
 let today = new Date();
 let getMonth = today.getMonth().toString().length <= 1 ? `0${today.getMonth() + 1}` : today.getMonth() + 1;
 let newDate = `${today.getFullYear()}-${getMonth}-${today.getDate()}`;
@@ -28,8 +32,9 @@ const displayTask = (lists) => {
         return dateA - dateB;
     });
 
-    for (let list of sorted) {
-        listDisplay.appendChild(list.task);
+
+    for (let i = 0; i < lists.length; i++) {
+        listDisplay.append(lists[i].task);
     }
 }
 
@@ -47,9 +52,10 @@ form.addEventListener("submit", (e) => {
 
     const btnContainerTag = createTag("div", "btn-container");
     const btnCompleteTag = createTag("button", "complete-btn", "✔");
-
     const btnDeleteTag = createTag("button", "delete-btn", "✘");
+    btnCompleteTag.type = "text";
     btnCompleteTag.title = "complete";
+    btnDeleteTag.type = "text";
     btnDeleteTag.title = "delete";
 
 
@@ -62,31 +68,42 @@ form.addEventListener("submit", (e) => {
     taskList.push(addedList);
     displayTask(taskList);
 
-    btnCompleteTag.addEventListener("click", (e) => checkDeleteBtn(e, dateTag, listTag));
-    btnDeleteTag.addEventListener("click", (e) => checkDeleteBtn(e, taskListTag, taskList));
+    btnCompleteTag.addEventListener("click", () => {
+
+        dateTag.style.color = "red";
+        dateTag.style.textDecoration = "line-through";
+
+        listTag.style.color = "red";
+        listTag.style.textDecoration = "line-through";
+
+    });
+
+
+    btnDeleteTag.addEventListener("click", (e) => {
+        // taskListTag.parentNode.removeChild(taskListTag);
+        taskListTag.remove(taskListTag);
+        taskList.splice(taskList.indexOf(addedList), 1);
+    });
 
     form.reset();
 
 });
 
-const checkDeleteBtn = (e, taskTag, taskList) => {
-    const classValue = e.target.classList.value;
 
-    if (classValue === "delete-btn") {
-        taskTag.parentNode.removeChild(taskTag);
-        taskList.splice(taskList.indexOf(taskTag), 1);
-    }
-    else {
+confirmBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    const name = document.querySelector(".userName");
 
-        taskTag.style.color = "red";
-        taskTag.style.textDecoration = "line-through";
+    name.textContent = e.target.form[1].value;
+    getModal.setAttribute("class", "");
 
-        taskList.style.color = "red";
-        taskList.style.textDecoration = "line-through";
-    }
-
-};
+});
 
 
+cancelBtn.addEventListener("click", (e) => {
+    e.preventDefault();
+    e.target.form.reset();
+    getModal.setAttribute("class", "active show");
+});
 
 

@@ -6,6 +6,10 @@
      box-sizing: border-box;
 }
 
+body {
+     background: hsla(0, 0%, 0%);
+}
+
 .container {
      display: flex;
      flex-direction: column;
@@ -14,7 +18,7 @@
      padding: 10px;
      font-family: "Roboto", sans-serif;
      min-height: 100vh;
-     background: hsl(0, 0%, 91%);
+     // background: hsla(0, 0%, 0%);
      min-width: 320px;
      max-width: 1440px;
 
@@ -31,11 +35,11 @@
           display: flex;
           flex-direction: column;
           align-items: center;
-          gap: 20px;
+          gap: 30px;
           text-align: center;
           padding: 20px;
           border-radius: 10px;
-          background: hsl(192, 86%, 53%);
+          background: hsl(204, 86%, 53%);
           border: 5px solid hsl(0, 0%, 100%);
           width: 100%;
           height: 100%;
@@ -48,13 +52,16 @@
                position: absolute;
                top: 2px;
                right: 5px;
-               padding: 10px 10px 20px 10px;
+               padding: 10px 10px 0px 10px;
 
                &:hover {
-                    // font-weight: 600;
                     text-decoration: underline;
                     cursor: pointer;
                }
+          }
+
+          & h2 {
+               margin-top: 20px;
           }
 
           & form {
@@ -118,7 +125,7 @@
 
                & .task-list {
                     display: flex;
-                    justify-content: space-evenly;
+                    justify-content: flex-start;
                     align-items: center;
                     gap: 10px;
                     width: 100%;
@@ -129,7 +136,9 @@
 
                     & .date {
                          font-size: 11px;
-                         width: 40%;
+                         text-align: left;
+                         width: 50%;
+                         border: 1px solid red;
                     }
 
                     & .list {
@@ -175,6 +184,4 @@
      }
 }
 
-#modal-container {
-     display: none;
-}
+@import "./modal";

@@ -6,6 +6,10 @@
   box-sizing: border-box;
 }
 
+body {
+  background: hsl(0deg, 0%, 0%);
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -14,7 +18,6 @@
   padding: 10px;
   font-family: "Roboto", sans-serif;
   min-height: 100vh;
-  background: hsl(0deg, 0%, 91%);
   min-width: 320px;
   max-width: 1440px;
 }
@@ -29,11 +32,11 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
+  gap: 30px;
   text-align: center;
   padding: 20px;
   border-radius: 10px;
-  background: hsl(192deg, 86%, 53%);
+  background: hsl(204deg, 86%, 53%);
   border: 5px solid hsl(0deg, 0%, 100%);
   width: 100%;
   height: 100%;
@@ -46,11 +49,14 @@
   position: absolute;
   top: 2px;
   right: 5px;
-  padding: 10px 10px 20px 10px;
+  padding: 10px 10px 0px 10px;
 }
 .container .task-container .close:hover {
   text-decoration: underline;
   cursor: pointer;
+}
+.container .task-container h2 {
+  margin-top: 20px;
 }
 .container .task-container form {
   display: flex;
@@ -107,7 +113,7 @@
 }
 .container .task-container .display .task-list {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   gap: 10px;
   width: 100%;
@@ -118,7 +124,9 @@
 }
 .container .task-container .display .task-list .date {
   font-size: 11px;
-  width: 40%;
+  text-align: left;
+  width: 50%;
+  border: 1px solid red;
 }
 .container .task-container .display .task-list .list {
   font-size: 15px;
@@ -154,7 +162,94 @@
 }
 
 #modal-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: hsl(0deg, 0%, 0%);
   display: none;
+  visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  animation: fadeOut 500ms ease-in-out forwards;
+  z-index: -1;
+  min-width: 320px;
+  max-width: 1440px;
+}
+#modal-container.active {
+  z-index: 100;
+  animation: fadeIn 500ms ease-in-out forwards;
+}
+#modal-container.show {
+  display: flex;
+  visibility: visible;
+}
+#modal-container .modal {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  background: hsl(204deg, 86%, 53%);
+  border: 5px solid hsl(0deg, 0%, 100%);
+  color: hsl(0deg, 0%, 0%);
+  padding: 40px 30px;
+  border-radius: 10px;
+  min-width: 320px;
+}
+#modal-container .modal form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+#modal-container .modal form fieldset {
+  padding-top: 10px;
+  width: 100%;
+  border: none;
+}
+#modal-container .modal form fieldset legend {
+  font-weight: bold;
+}
+#modal-container .modal form input {
+  padding: 10px;
+  outline: none;
+  border-radius: 5px;
+  border: none;
+  width: 100%;
+}
+#modal-container .modal form .confirmation-btn {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  width: 100%;
+}
+#modal-container .modal form .confirmation-btn button {
+  padding: 10px 20px;
+  width: 100%;
+  border: none;
+  background: hsla(0deg, 0%, 0%, 0.7);
+  color: hsl(0deg, 0%, 100%);
+  border-radius: 5px;
+}
+#modal-container .modal form .confirmation-btn button:hover {
+  background: hsl(0deg, 0%, 0%);
+  cursor: pointer;
+}
+#modal-container .modal form .confirmation-btn button:active {
+  background: hsla(0deg, 0%, 0%, 0.7);
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 0;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
