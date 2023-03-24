@@ -126,7 +126,6 @@ body {
   font-size: 11px;
   text-align: left;
   width: 50%;
-  border: 1px solid red;
 }
 .container .task-container .display .task-list .list {
   font-size: 15px;
@@ -224,7 +223,7 @@ body {
   gap: 30px;
   width: 100%;
 }
-#modal-container .modal form .confirmation-btn button {
+#modal-container .modal form .confirmation-btn .modal-btn {
   padding: 10px 20px;
   width: 100%;
   border: none;
@@ -232,11 +231,11 @@ body {
   color: hsl(0deg, 0%, 100%);
   border-radius: 5px;
 }
-#modal-container .modal form .confirmation-btn button:hover {
+#modal-container .modal form .confirmation-btn .modal-btn:hover {
   background: hsl(0deg, 0%, 0%);
   cursor: pointer;
 }
-#modal-container .modal form .confirmation-btn button:active {
+#modal-container .modal form .confirmation-btn .modal-btn:active {
   background: hsla(0deg, 0%, 0%, 0.7);
 }
 

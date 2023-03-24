@@ -4,6 +4,7 @@ const getModal = document.querySelector("#modal-container");
 const confirmBtn = document.querySelector(".confirm");
 const cancelBtn = document.querySelector(".cancel");
 const form = document.getElementById("form");
+const register = document.getElementById("register");
 
 let today = new Date();
 let getMonth = today.getMonth().toString().length <= 1 ? `0${today.getMonth() + 1}` : today.getMonth() + 1;
@@ -39,7 +40,7 @@ const displayTask = (lists) => {
 }
 
 
-// once save button is click do this function
+// once save is click do this function
 form.addEventListener("submit", (e) => {
     e.preventDefault();
 
@@ -80,7 +81,6 @@ form.addEventListener("submit", (e) => {
 
 
     btnDeleteTag.addEventListener("click", (e) => {
-        // taskListTag.parentNode.removeChild(taskListTag);
         taskListTag.remove(taskListTag);
         taskList.splice(taskList.indexOf(addedList), 1);
     });
@@ -90,11 +90,12 @@ form.addEventListener("submit", (e) => {
 });
 
 
-confirmBtn.addEventListener("click", (e) => {
+register.addEventListener("submit", (e) => {
     e.preventDefault();
+
     const name = document.querySelector(".userName");
 
-    name.textContent = e.target.form[1].value;
+    name.textContent = e.target.name.value;
     getModal.setAttribute("class", "");
 
 });
