@@ -45,7 +45,7 @@ form.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const ddmmyyyy = form["task-date"].value.split("-").reverse().join("-");
-    const myTask = form["task"].value;
+    const myTask = form["task"].value.trim();
 
     const taskListTag = createTag("div", "task-list");
     const dateTag = createTag("div", "date", ddmmyyyy);
@@ -92,11 +92,13 @@ form.addEventListener("submit", (e) => {
 
 register.addEventListener("submit", (e) => {
     e.preventDefault();
-    const value = e.target.name.value.split("");
-    value[0] = value[0].toUpperCase();
 
-    const name = document.querySelector(".userName");
-    name.textContent = value.join("");
+    const value = e.target.name.value.trim();
+    const name = value.split("");
+    name[0] = name[0].toUpperCase();
+
+    const userName = document.querySelector(".userName");
+    userName.textContent = name.join("");
     getModal.setAttribute("class", "");
 
 });
