@@ -13,7 +13,7 @@ Thanks for checking out.
 
 ## Overview
 
-This is about creating todo list in vanilla javascript.
+This is about creating todo list in vanilla javascript. As a Bayan Academy Final Project.
 
 ### The Project
 
