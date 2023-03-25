@@ -94,7 +94,6 @@ register.addEventListener("submit", (e) => {
     e.preventDefault();
 
     const name = document.querySelector(".userName");
-
     name.textContent = e.target.name.value;
     getModal.setAttribute("class", "");
 
