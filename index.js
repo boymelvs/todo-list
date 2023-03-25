@@ -92,9 +92,11 @@ form.addEventListener("submit", (e) => {
 
 register.addEventListener("submit", (e) => {
     e.preventDefault();
+    const value = e.target.name.value.split("");
+    value[0] = value[0].toUpperCase();
 
     const name = document.querySelector(".userName");
-    name.textContent = e.target.name.value;
+    name.textContent = value.join("");
     getModal.setAttribute("class", "");
 
 });
